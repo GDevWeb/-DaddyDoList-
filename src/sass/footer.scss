@@ -1,0 +1,28 @@
+// Import variables and mixins
+@import 'variables';
+@import 'mixins';
+
+footer{
+    width: 100%;
+    min-height: 5vh;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    background-color: $importantElt;
+    border-radius: 1rem;
+
+    #copyright, #links{
+        width: 100%;
+    }
+
+    #links{
+        a{
+            margin: 0.5rem;
+            color: $linkColor;
+            text-decoration: none;
+        }
+    }
+}

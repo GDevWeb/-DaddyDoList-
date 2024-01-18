@@ -37,12 +37,13 @@ p.taskLabel {
 }
 
 .formGroup.checkBox {
-    width: 100%;
+    width: 80%;
     padding: 0.5rem;
+    margin: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     gap: 1rem;
 
     label{

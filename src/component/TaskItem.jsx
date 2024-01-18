@@ -42,7 +42,7 @@ function TaskItem({
             checked={isChecked}
             onChange={checkBoxIsChecked}
           />
-          <span> {isChecked ? "complété ✅" : "en cours ⚙️"}</span>
+          <span> {isChecked ? "terminée ✅" : "en cours ⚙️"}</span>
         </div>
       </div>
       <div className="buttonUDContainer">
