@@ -1,0 +1,61 @@
+@import 'variables';
+@import 'mixins';
+
+.formGroup.taskDetail {
+    width: 80%;
+    margin: auto;
+    min-height: 25%;
+    @include flexContainer(column);
+
+    label {
+        color: $primaryColor;
+        font-size: clamp(1.8rem, 2vw, 2.2rem);
+        font-weight: bolder;
+    }
+
+    textarea {
+        min-height: 25rem;
+        padding: 1rem;
+        border: none;
+        border-radius: 1rem;
+        font-size: clamp(1.6rem, 1vw, 2rem);
+        font-weight: bolder;
+        resize: none;
+    }
+}
+
+p.taskLabel {
+    color: $primaryColor;
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
+    font-weight: bolder;
+}
+
+.taskData {
+    color: #faebd7;
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    font-style: italic;
+}
+
+.formGroup.checkBox {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    label{
+        color: $primaryColor
+    }
+}
+
+button.updateButton,
+button.deleteButton {
+    @include buttonStyle(#1a1a1a, #646cff);
+
+    &:hover {
+        background-color: darken(#1a1a1a, 10%);
+        transition: all 0.2s ease-in-out;
+    }
+}

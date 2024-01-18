@@ -1,0 +1,131 @@
+// Import variables and mixins
+@import './sass/variables';
+@import './sass/mixins';
+
+// Reset styles
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Root styles
+:root {
+  font-family: $fontFamily;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: $lightTextColor;
+  background-color: $backgroundColor;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Task list styles
+ul#taskList {
+  @include flexContainer(column, 1rem);
+  gap: 1rem;
+
+  // Task item styles
+  li {
+    list-style: decimal;
+    border-bottom: 0.25rem solid $primaryColor;
+  }
+
+  // Link styles
+  a {
+    @include buttonStyle($linkColor, $linkHoverColor);
+    font-weight: 500;
+    text-decoration: inherit;
+
+    &:hover {
+      color: $linkHoverColor;
+    }
+  }
+
+  // Light color scheme styles
+  @media (prefers-color-scheme: light) {
+    color: #213547;
+    background-color: #ffffff;
+
+    a:hover {
+      color: #747bff;
+    }
+  }
+}
+
+// Body styles
+html {
+  font-size: 0.64rem;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 3.2rem;
+  min-height: 100vh;
+  font-size: $fontSizeBase;
+}
+
+// Header styles
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+// Button container styles
+.buttonUDContainer {
+  padding: 1rem;
+  @include flexContainer(row, 1rem);
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+}
+
+// Button styles
+button {
+  @include buttonStyle(#1a1a1a, #646cff);
+}
+
+// Form styles
+@import './sass/form.scss';
+
+// Dark color scheme styles
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: $lightTextColor;
+    background-color: $backgroundColor;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+// Toast :
+.toast {
+  position: fixed;
+  bottom: 15vh;
+  right: 1rem;
+  background-color: $backgroundColorElt;
+  color: $lightTextColor;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  z-index: 999;
+  opacity: 0; 
+  transform: translateY(0.25rem); 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet d'apparition */
+.toast.show {
+  opacity: 1; 
+  transform: translateY(0);
+}

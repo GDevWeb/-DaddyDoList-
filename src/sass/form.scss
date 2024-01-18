@@ -1,0 +1,148 @@
+// Import variables and mixins
+@import 'variables';
+@import 'mixins';
+
+// Form styles
+form {
+    @include flexContainer(wrap, 1rem);
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem auto;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        color: $primaryColor;
+    }
+
+    // Input group styles
+    .inputGroup {
+        width: 100%;
+        @include flexContainer(column, 1rem);
+
+        // Checkbox specific styles
+        &.checkBox {
+            flex-direction: row;
+        }
+
+        // Label styles
+        label {
+            font-size: 1.8rem;
+            font-weight: bolder;
+            color: $primaryColor;
+        }
+
+        // Input styles
+        input,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        // Textarea styles
+        textarea {
+            height: 30rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            resize: none;
+        }
+
+        // Error input container styles
+        .errorInputContainer {
+            height: 2.5rem;
+            padding: 1rem;
+            @include flexContainer;
+            align-items: center;
+            justify-content: center;
+
+            // Error input styles
+            .errorInput {
+                color: $dangerColor;
+            }
+        }
+    }
+}
+
+// Add task button styles
+button#addTaskButton {
+    background-color: $backgroundColorElt;
+    &:hover {
+        background-color: #008000;
+        border-color: antiquewhite;
+    }
+}
+
+button#cancelUpdateButton{
+    background-color: $backgroundColorElt;
+    &:hover {
+        background-color: $updateColor;
+        border-color: antiquewhite;
+    }
+
+}
+
+// Task detail styles
+.formGroup.taskDetail {
+    width: 80%;
+    margin: auto;
+    min-height: 25%;
+    @include flexContainer(column);
+
+    // Label styles
+    label {
+        font-size: clamp(1.8rem, 2vw, 2.2rem);
+        font-weight: bolder;
+    }
+
+    // Textarea styles
+    textarea {
+        min-height: 25rem;
+        padding: 1rem;
+        border: none;
+        border-radius: 1rem;
+        font-size: clamp(1.6rem, 1vw, 2rem);
+        font-weight: bolder;
+        resize: none;
+
+        textarea.editingStyle{
+            border: 1rem solid $updateColor;
+        }
+    }
+}
+
+// Task label styles
+p.taskLabel {
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
+    font-weight: bolder;
+}
+
+// Task data styles
+.taskData {
+    color: #faebd7;
+    font-style: italic;
+}
+
+// Update button styles
+button.updateButton {
+    &:hover {
+        background-color: $updateColor;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+// Delete button styles
+button.deleteButton {
+    &:hover {
+        background-color: $dangerColor;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+// Editing mode :
+.editingMode{
+    border-radius: 1rem;
+    border: 0.25rem solid $updateColor;
+}
