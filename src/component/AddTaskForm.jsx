@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "../sass/form.scss";
 import taskList from "./taskList";
-import TaskItem from "./Taskitem";
+import TaskItem from "./TaskItem";
 import StatusBar from "./StatusBar";
 
 function AddTaskForm() {
