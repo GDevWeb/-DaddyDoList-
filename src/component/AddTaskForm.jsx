@@ -108,6 +108,9 @@ function AddTaskForm() {
             : task
         )
       );
+      / Add an orange style "editing mode":
+      const addTaskForm = document.querySelector("form#addTaskForm");
+      addTaskForm.classList.remove("editingMode");
       showToast(`Tâche mise à jour avec succès !`);
 
       setFormData({
